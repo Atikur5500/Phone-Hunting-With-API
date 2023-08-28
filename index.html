@@ -5,20 +5,61 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/daisyui@3.6.2/dist/full.css" rel="stylesheet" type="text/css" />
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.1/flowbite.min.css" rel="stylesheet" />
     <title>Phone Hunting Project With API</title>
 </head>
-<body>
-    <h1 class="text-4xl font-bold text-center">Phone Hunting Project</h1>
+<body style="font-family: JetBrains Mono; word-spacing: -5px; letter-spacing: -1px;">
 
+    <header>
+        <h1 class="text-4xl font-bold text-center">Phone Hunting Project</h1>
+    </header>
+    <main>
+        <!-- Search Section -->
+        <section>
+            <div class=" text-center mt-5 flex justify-center gap-1">
+                <input id="search-field" type="text" placeholder="search here"
+                    class="input input-bordered input-accent w-3/5 rounded-sm"/>
+                <button onclick="searchButtonHandler()" type="button"
+                    class="btn text-white bg-gradient-to-r from-cyan-400 via-cyan-500 to-cyan-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 shadow-lg shadow-cyan-500/50 dark:shadow-lg dark:shadow-cyan-800/80 font-medium rounded-sm text-sm px-5 py-2.5 text-center mr-2 mb-2 border-none">Search</button>
+            </div>
+        </section>
+        <!-- Modal -->
+        <section class="text-center">
+            <!-- Open the modal using ID.showModal() method -->
+            <dialog id="show_details_modal" class="modal modal-middle">
+                <form method="dialog" class="modal-box px-0">
+                    <h3 class="font-bold text-lg"></h3>
+                    <div id="phone-details-container">
 
+                    </div>
+                    <div class="modal-action justify-center">
+                        <!-- if there is a button in form, it will close the modal -->
+                        <button class="btn text-white bg-gradient-to-r from-cyan-400 via-cyan-500 to-cyan-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 shadow-lg shadow-cyan-500/50 dark:shadow-lg dark:shadow-cyan-800/80 font-medium rounded-sm text-sm px-5 py-2.5 text-center mr-2 mb-2 border-none">Close</button>
+                    </div>
+                </form>
+            </dialog>
+        </section>
+        <section>
+            <!-- Card Display Section -->
+            <div id="loading-spinner" class="text-center my-40 hidden">
+                <span class="loading loading-dots loading-lg"></span>
+            </div>
+            <div id="phone-container" class="p-5 lg:p-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+               
+            </div>
+            <!-- Show All Button -->
+            <div id="show-all-container" class="text-center mb-10 hidden">
+                <button onclick="showAllHandler()" type="button"
+                    class="text-white bg-gradient-to-r from-cyan-400 via-cyan-500 to-cyan-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 shadow-lg shadow-cyan-500/50 dark:shadow-lg dark:shadow-cyan-800/80 font-medium rounded-sm text-sm px-5 py-2.5 text-center mr-2 mb-2">Show All</button>
+            </div>
+        </section>
+       
+    </main>
+    <footer>
 
+    </footer>
 
-
-
-
-
-
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.1/flowbite.min.js"></script>
     <script src="Javascript/hunting.js"></script>
 </body>
 </html>
